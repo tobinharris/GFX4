@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>GFX4 <%= controller.action_name %> - Search for public domain or open source icons, clipart, vector graphics and illustrations.</title>
+  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'layout' %>   
+  <%= stylesheet_link_tag 'forms' %>      
+  <%= stylesheet_link_tag 'common' %>      
+</head>
+<body>
+<div class="header">
+	<h1><a href="/resources"><img src="/images/logo.png" alt="GFX4 - No nonsense graphics search." /></a></h1>
+</div>        
+<div class="promo" >
+
+	
+	<ul style="float: right; list-style-image: url(/images/tick_bullet.png)">
+		<li>A FREE service, thanks to openclipart.org.</li>
+		<li>Use all graphics for FREE for any purpose.</li>
+		<li>Uber fast clipart search.</li>
+	</ul>
+                                                                                             
+	
+	<h2 style="line-height: 1.4em">	                                                                   
+	<!--<img style="float:right; position: relative; " src="/images/flower.png"  />	-->
+	<img style="float: left; position: relative; top: -1em;" src="/images/vader.png"/> 
+	GFX4 lets you search public domain clipart like a <del style="color: #FFCB96">jedi</del> sith.
+	<br/>
+	More free icons and graphics than you can shake a stick at. 	
+	
+	</h2>
+	Powered by <a href="http://openclipart.org">openclipart.org</a>. Created by <a href="http://engineroomapps.com">Engine Room</a>
+	<br/>
+</div>     
+<div class="tab" >
+<%= link_to "Home", :action=>:index %></b> | 
+<%= link_to "Random", :action=>:random%>
+</div>
+<div class="content">
+
+	<p style="color: green"><%= flash[:notice] %></p>
+
+	<div style="width: 45%; display: inline-table; vertical-align: top;">
+		<form id="search_form" action="/resources/search" onsubmit="document.location = '/resources/search/' + document.getElementById('query').value; return false;"><p class="search">Search <input type="text" id="query" name="query" class="search_box" value="<%=h params[:query]%>"/><input type="submit" value="Go"><br/></p>
+			</form>
+	</div>                  
+
+	<div style="width: 40%; display: inline-table; ">                      
+		<b>Try These!</b><br/>
+		<%= cool_searches.map{ |term| link_to(term, :action=>:search, :id=>term) }.join(', ')  %>, <%= link_to "more...", :action=>:tag_cloud %>     
+		<br/><small><%= Resource.count %> free images right here. Woohoo!</b>
+	</div>
+
+	<%= yield %>  
+
+</div>                               
+
+<div class="footer">                
+	
+	<div style="width: 30%; float: left; padding: 2em;">
+	<h2>About</h2>	        
+	<p>GFX4 was created on a lazy Saturday afternoon by <%= link_to "Tobin Harris", "http://tobinharris.com" %> of <%= link_to "Engine Room Apps", "http://engineroomapps.com"%>.</p>
+	<p>He wanted a quick way of browsing and searching the amazing array of images on <%= link_to "openclipart.org", "http://openclipart.org"%>, and set about building this simple tool to do just that.</p>
+	
+	<p>GFX4 makes it easy for anyone to find great free clipart, without all the usual <em>crap</em> that clipart sites tend to throw in your face.</p>   
+	<p>Enjoy!</p>
+	</div>                  
+	
+	<div style="width: 30%; float: left; padding: 2em;">
+		<h2>Socialise</h2>     
+		<table> 
+		<tr>
+		<td><img src="/images/twitter.png"></td><td><%= link_to "Follow us on twitter", "http://twitter.com/tobinharris" %></td>
+		</tr>
+		<tr>
+		<td><img src="/images/delicious.png"></td><td>Bookmark <br/>on delicious</td>
+		</tr>
+		<tr>
+		<td><img src="/images/email.png"></td><td><%= link_to "Email your feedback", "mailto: hello@engineroomapps.com" %>.</td>
+		</tr>
+		</table>
+	</div>
+</div>   
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-4340115-6");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>

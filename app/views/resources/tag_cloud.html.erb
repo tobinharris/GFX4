@@ -1,0 +1,12 @@
+<style>
+	.tag_tiny{font-size: 1em;}
+	.tag_small{font-size: 1.2em;}
+	.tag_medium{font-size: 1.4em;}
+	.tag_large{font-size: 1.8em;}
+	
+</style>
+
+
+<% tag_cloud @tags, %w(tag_tiny tag_small tag_medium tag_large) do |tag, css_class| %>
+  <%= link_to tag.name, { :action => :search, :id => tag.name }, :class => css_class %>
+<% end if @tags %>

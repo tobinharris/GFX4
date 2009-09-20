@@ -1,0 +1,15 @@
+
+
+
+<h2><%=h @resource.name %></h2>
+<b><%=link_to "Download From openclipart.org", @resource.home_page_url %></b>
+<br/><small>
+<b>Tags:</b><%@resource.tags.each do |tag| %>
+<%= link_to tag.name, {:action => :search, :id=>tag.name}%>
+<%end%>
+</small>
+<br/>
+<br/><%=link_to(image_tag(@resource.url || ""), :action=>:show, :id=>@resource.url_hash) %>
+<br/>
+
+</div>  

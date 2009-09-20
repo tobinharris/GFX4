@@ -1,0 +1,29 @@
+.promo{
+	background-color: #FF7F00; 	
+	padding: .5em 2em 2.5em 2em; 
+	color: white;
+}
+
+.promo a{
+	color: white;
+}   
+
+.promo h2{
+	font-size: 1.6em; 
+	font-weight: normal;
+}                                            
+
+
+td{
+	vertical-align: top;
+}
+
+.tab
+{
+ width: 316px; height: 40px; left: 2em; position: absolute; padding: .5em .5em .5em 1em; float: left; background: url(/images/tab.png) no-repeat; color: white;   
+}                                                                                                                                                
+
+.tab a{
+	color: white;
+	text-decoration: none;
+}
