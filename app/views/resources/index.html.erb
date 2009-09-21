@@ -4,7 +4,7 @@
 	<div style="background-color: #ddd; padding: 1em; max-width: 220px;">
 		<img src="/images/callout.png" style="position: relative; top: -25px;">
 		<h3 style="margin:0;"><%=h resource.name %></h3>
-		<b><%= link_to "Full Size", :action=>:show, :id=>resource.url_hash %></b>&nbsp;<b><%=link_to "Download", resource.home_page_url %></b>
+		<b><%= link_to "Full Size", :action=>:show, :id=>resource.url_hash %></b>&nbsp;&nbsp;&nbsp;<b><%=link_to "Download", resource.home_page_url %></b>
 		<br/>
 	   	<small>
 			<%resource.tags.each do |tag| %>
