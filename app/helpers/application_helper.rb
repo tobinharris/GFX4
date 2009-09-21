@@ -3,7 +3,7 @@ module ApplicationHelper
    include TagsHelper
    
    def cool_searches
-     ['characters', 'file', 'emoticon', 'tree', 'shield', 'lego', 'sexy',  'car', 'furniture', 'photorealistic', 'kitchen', 'roadsign','clock', 'isometric']
+     ['character', 'file', 'emoticon', 'tree', 'shield', 'lego', 'sexy',  'car', 'furniture', 'photorealistic', 'kitchen', 'roadsign','clock', 'isometric']
    end
 end                                                
 
