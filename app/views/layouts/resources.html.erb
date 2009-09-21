@@ -32,12 +32,12 @@
 	More free icons and graphics than you can shake a stick at. 	
 	
 	</h2>
-	Powered by <a href="http://openclipart.org">openclipart.org</a>. Created by <a href="http://engineroomapps.com">Engine Room</a>
+	Created by <a href="http://engineroomapps.com">Engine Room</a>. All graphics from <a href="http://openclipart.org">openclipart.org</a>. 
 	<br/>
 </div>     
 <div class="tab" >
 <%= link_to "Home", :action=>:index %></b> | 
-<%= link_to "Random", :action=>:random%>
+<%= link_to "Inspire Me!", :action=>:random%>
 </div>
 <div class="content">
 
@@ -49,7 +49,7 @@
 	</div>                  
 
 	<div style="width: 40%; display: inline-table; ">                      
-		<b>Try These!</b><br/>
+		<b>Some Fun Searches</b><br/>
 		<%= cool_searches.map{ |term| link_to(term, :action=>:search, :id=>term) }.join(', ')  %>, <%= link_to "more...", :action=>:tag_cloud %>     
 		<br/><small><%= Resource.count %> free images right here. Woohoo!</b>
 	</div>
