@@ -1,20 +1,17 @@
-<% @resources.each do |resource| %>      
-
-<div style="max-width: 220px; float: left; padding: 1em;">   
-<br/><%=link_to(image_tag(resource.url || "", :style=>'max-width: 200px; padding-bottom: 1em;'), :action=>:show, :id=>resource.url_hash) %>
-<div style="background-color: #ddd; padding: 1em;">
-   <img src="/images/callout.png" style="position: relative; top: -25px;">
-<h3 style="margin:0;"><%=h resource.name %></h3>
-<b><%= link_to "Full Size", :action=>:show, :id=>resource.url_hash %></b>&nbsp;<b><%=link_to "Download", resource.home_page_url %></b>
-<br/>
-<small>
-<%resource.tags.each do |tag| %>
-<%= link_to tag.name, {:action => :search, :id=>tag.name}%>
-<%end%>  
-<br/><%= resource.id %>
-</small>                          
-</div>
-</div>
-
-
+<% @resources.each do |resource| %>
+<div style="max-width: 220px; padding: 1em; display: inline-table;">   
+	<br/><%=link_to(image_tag(resource.url || "", :style=>'max-width: 200px; padding-bottom: 1em;'), :action=>:show, :id=>resource.url_hash) %>
+	<div style="background-color: #ddd; padding: 1em; max-width: 220px;">
+		<img src="/images/callout.png" style="position: relative; top: -25px;">
+		<h3 style="margin:0;"><%=h resource.name %></h3>
+		<b><%= link_to "Full Size", :action=>:show, :id=>resource.url_hash %></b>&nbsp;<b><%=link_to "Download", resource.home_page_url %></b>
+		<br/>
+	   	<small>
+			<%resource.tags.each do |tag| %>
+			<%= link_to tag.name, {:action => :search, :id=>tag.name}%>
+			<%end%>  
+			<br/><%= resource.id %>
+		</small>                          
+	</div>
+</div>                             
 <% end %>

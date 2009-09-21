@@ -51,37 +51,39 @@
 	<div style="width: 40%; display: inline-table; ">                      
 		<b>Some Fun Searches</b><br/>
 		<%= cool_searches.map{ |term| link_to(term, :action=>:search, :id=>term) }.join(', ')  %>, <%= link_to "more...", :action=>:tag_cloud %>     
-		<br/><small><%= Resource.count %> free images right here. Woohoo!</b>
+		<br/><small><%= Resource.count %> free images right here. Woohoo!</small>
 	</div>
 
 	<%= yield %>  
 
 </div>                               
 
-<div class="footer">                
+<div class="footer">   
+	<div style="display: inline-table;">
+		<div style="width: 30%; float: left; padding-right: 1em;">
+			<h2>About</h2>	        
+			<p>GFX4 was created on a lazy Saturday afternoon by <%= link_to "Tobin Harris", "http://tobinharris.com" %> of <%= link_to "Engine Room Apps", "http://engineroomapps.com"%>.</p>
+			<p>He wanted a quick way of browsing and searching the amazing array of images on <%= link_to "openclipart.org", "http://openclipart.org"%>, and set about building this simple tool to do just that.</p>
 	
-	<div style="width: 30%; float: left; padding: 2em;">
-	<h2>About</h2>	        
-	<p>GFX4 was created on a lazy Saturday afternoon by <%= link_to "Tobin Harris", "http://tobinharris.com" %> of <%= link_to "Engine Room Apps", "http://engineroomapps.com"%>.</p>
-	<p>He wanted a quick way of browsing and searching the amazing array of images on <%= link_to "openclipart.org", "http://openclipart.org"%>, and set about building this simple tool to do just that.</p>
+			<p>GFX4 makes it easy for anyone to find great free clipart, without all the usual <em>crap</em> that clipart sites tend to throw in your face.</p>   
+			<p>Enjoy!</p>
+		</div>                  
 	
-	<p>GFX4 makes it easy for anyone to find great free clipart, without all the usual <em>crap</em> that clipart sites tend to throw in your face.</p>   
-	<p>Enjoy!</p>
-	</div>                  
-	
-	<div style="width: 30%; float: left; padding: 2em;">
-		<h2>Socialise</h2>     
-		<table> 
-		<tr>
-		<td><img src="/images/twitter.png"></td><td><%= link_to "Follow us on twitter", "http://twitter.com/tobinharris" %></td>
-		</tr>
-		<tr>
-		<td><img src="/images/delicious.png"></td><td>Bookmark <br/>on delicious</td>
-		</tr>
-		<tr>
-		<td><img src="/images/email.png"></td><td><%= link_to "Email your feedback", "mailto: hello@engineroomapps.com" %>.</td>
-		</tr>
-		</table>
+		<div style="width: 30%; float:left;">
+			<h2>Socialise</h2>     
+			
+			<table> 
+			<tr>
+			<td><img src="/images/twitter.png"></td><td><%= link_to "Follow us on twitter", "http://twitter.com/tobinharris" %></td>
+			</tr>
+			<tr>
+			<td><img src="/images/delicious.png"></td><td>Bookmark <br/>on delicious</td>
+			</tr>
+			<tr>
+			<td><img src="/images/email.png"></td><td><%= link_to "Email your feedback", "mailto: hello@engineroomapps.com" %>.</td>
+			</tr>
+			</table>
+		</div>  
 	</div>
 </div>   
 
