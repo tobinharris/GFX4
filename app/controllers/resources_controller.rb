@@ -22,7 +22,8 @@ class ResourcesController < ApplicationController
       @resources =  Resource.find_with_index( params[:id], {:limit=>page_size} )             
       params[:query] = params[:id]
     else
-        @resources = Resource.random_selection(3)
+        @resources = [] 
+        @resources << Resource.find_by_url_hash('2874b662') #random_selection(3)
     end
     
     @resource_count = Resource.count
