@@ -2,6 +2,7 @@ class ResourcesController < ApplicationController
   
   def search
     @resources = Resource.find_with_index( params[:id] || params[:query], {:limit=>20})   
+    @resources = @resources | Resource.find_tagged_with( params[:id] || params[:query])
     params[:query]= params[:id]
     respond_to do |format|
       format.html {render :action => 'index'}
