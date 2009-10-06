@@ -45,6 +45,11 @@ class ResourcesController < ApplicationController
   def random           
     @resources = Resource.random_selection page_size, page_size        
     render :action=>'index'
+  end     
+  
+  def latest
+    @resources = Resource.find(:all, :order=>:date_created)
+    redner :action=>'index'
   end
   
 end
