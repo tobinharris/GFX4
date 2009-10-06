@@ -7,8 +7,8 @@ namespace :spider do
   
   "skip existing and take the first 5 pages (100 images)"
   task :update => :environment do    
-    s = Spider.new true
-    s.start 4020   
+    s = Spider.new true, 300
+    s.start 0   
   end
 
   "Run through the whole lot, updating existing stuff also."
