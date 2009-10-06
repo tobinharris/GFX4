@@ -48,8 +48,8 @@ class ResourcesController < ApplicationController
   end     
   
   def latest
-    @resources = Resource.find(:all, :order=>:date_created)
-    redner :action=>'index'
+    @resources = Resource.find(:all, :order=>:created_at, :limit=>page_size)
+    render :action=>'index'
   end
   
 end
